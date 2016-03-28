@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -e
+
+# import $HOME
+if [ ! -d $HOME/.dnx ]; then
+  mv $APP_DIR/.modulus/home/ /mnt
+fi
+
+cd $HOME
+ldconfig
+
+cd $APP_DIR
+source $HOME/.dnx/dnvm/dnvm.sh
+dnx web --server.urls=http://*:8080/ &
+wait
