@@ -3,7 +3,9 @@ set -e
 
 # import $HOME
 if [ ! -d $HOME/.dnx ]; then
-  mv $APP_DIR/.modulus/home/ /mnt
+  GLOBIGNORE='n*'
+  mv $APP_DIR/.modulus/home/* /mnt/home
+  unset GLOBIGNORE
 fi
 
 cd $HOME
