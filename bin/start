@@ -8,9 +8,6 @@ if [ ! -d $HOME/.dnx ]; then
   unset GLOBIGNORE
 fi
 
-cd $HOME
-ldconfig
-
 cd $APP_DIR
 source $HOME/.dnx/dnvm/dnvm.sh
 dnx web --server.urls=http://*:8080/ &

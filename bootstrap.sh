@@ -20,6 +20,7 @@ sh autogen.sh
 make
 make install
 rm -rf /usr/local/src/libuv-1.8.0
+cd ~/ && ldconfig
 
 # clean up
 apt-get autoclean && apt-get autoremove -y && apt-get clean
