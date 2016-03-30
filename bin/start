@@ -10,5 +10,5 @@ fi
 
 cd $APP_DIR
 source $HOME/.dnx/dnvm/dnvm.sh
-dnx web --server.urls=http://*:8080/ &
+dnx web --server.urls=http://*:$PORT/ &
 wait
