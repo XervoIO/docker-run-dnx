@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+# import $HOME
+if [ ! -d $HOME/.dnx ]; then
+  GLOBIGNORE='n*'
+  mv $APP_DIR/.modulus/home/* /mnt/home
+  unset GLOBIGNORE
+fi
+
+cd $APP_DIR
+source $HOME/.dnx/dnvm/dnvm.sh
+dnx web --server.urls=http://*:$PORT/ &
+wait
