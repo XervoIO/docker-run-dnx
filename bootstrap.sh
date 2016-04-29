@@ -6,10 +6,6 @@ export HOME=/root
 
 apt-get update
 
-# install dnx prerequisite
-apt-get install -y libunwind8 gettext libssl-dev libcurl4-openssl-dev zlib1g \
-  libicu-dev uuid-dev
-
 # install Libuv
 apt-get -y install make automake libtool
 curl -sSL https://github.com/libuv/libuv/archive/v1.8.0.tar.gz \
